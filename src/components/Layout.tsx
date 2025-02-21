@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Wallet, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,15 +12,7 @@ import {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [walletConnected, setWalletConnected] = useState(false);
-  const [walletAddress, setWalletAddress] = useState("");
   const location = useLocation();
-
-  const connectWallet = async () => {
-    // Wallet connection logic will go here
-    setWalletConnected(true);
-    setWalletAddress("0x1234...5678"); // Example address
-  };
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -52,29 +45,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   {item.name}
                 </Link>
               ))}
-              {walletConnected ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="inline-flex items-center px-4 py-2 rounded-full bg-green-600 text-white font-medium text-sm transition-all hover:bg-green-700">
-                    <span className="mr-2">{walletAddress}</span>
-                    <ChevronDown className="w-4 h-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>
-                      <Link to="/profile" className="w-full">
-                        Profile
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <button
-                  onClick={connectWallet}
-                  className="inline-flex items-center px-4 py-2 rounded-full bg-green-600 text-white font-medium text-sm transition-all hover:bg-green-700"
-                >
-                  <Wallet className="w-4 h-4 mr-2" />
-                  Connect Wallet
-                </button>
-              )}
+              <ConnectButton />
             </div>
 
             {/* Mobile Menu Button */}
@@ -109,23 +80,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   {item.name}
                 </Link>
               ))}
-              {walletConnected ? (
-                <Link
-                  to="/profile"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-600"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {walletAddress}
-                </Link>
-              ) : (
-                <button
-                  onClick={connectWallet}
-                  className="w-full mt-4 inline-flex items-center justify-center px-4 py-2 rounded-full bg-green-600 text-white font-medium text-sm transition-all hover:bg-green-700"
-                >
-                  <Wallet className="w-4 h-4 mr-2" />
-                  Connect Wallet
-                </button>
-              )}
+              <div className="mt-4 px-3">
+                <ConnectButton />
+              </div>
             </div>
           </div>
         )}
