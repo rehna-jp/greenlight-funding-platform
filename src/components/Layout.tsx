@@ -24,8 +24,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
-    { name: "Validate", path: "/validate" },
-    { name: "About", path: "/about" },
+    { name: "DAO", path: "/dao" },
+    { name: "List Project", path: "/list-project" },
   ];
 
   return (
@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="text-xl font-semibold text-green-600">
-              GreenLight
+              GreenStake
             </Link>
 
             {/* Desktop Navigation */}
@@ -138,7 +138,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <footer className="bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-gray-600 text-sm">
-            © {new Date().getFullYear()} GreenLight. All rights reserved.
+            © {new Date().getFullYear()} GreenStake. All rights reserved.
           </div>
         </div>
       </footer>

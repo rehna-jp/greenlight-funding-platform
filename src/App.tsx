@@ -8,8 +8,8 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Validate from "./pages/Validate";
-import About from "./pages/About";
 import Profile from "./pages/Profile";
+import ListProject from "./pages/ListProject";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,8 +24,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/validate" element={<Validate />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/dao" element={<Validate />} />
+            <Route path="/list-project" element={<ListProject />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
