@@ -14,20 +14,20 @@ const Validate = () => {
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-green-600">Validate Projects</h1>
       <div className="max-w-3xl mx-auto space-y-6">
-        <Card className="border-green-100">
+        <Card className="border-green-100 bg-white">
           <CardHeader>
             <CardTitle className="text-black">Solar Farm Project</CardTitle>
-            <CardDescription>Community solar installation</CardDescription>
+            <CardDescription className="text-gray-600">Community solar installation</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <div className="prose max-w-none">
                 <h3 className="text-lg font-medium text-black">Project Details</h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-600">
                   A 5MW solar farm installation that will provide clean energy to over 1,000 households.
                   The project includes installation of 15,000 solar panels and necessary infrastructure.
                 </p>
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 space-y-2 text-gray-700">
                   <p><strong>Location:</strong> Sacramento, CA</p>
                   <p><strong>Estimated Impact:</strong> 7,500 tons CO2 reduction/year</p>
                   <p><strong>Timeline:</strong> 18 months</p>
